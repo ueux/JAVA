@@ -59,6 +59,8 @@ public class OOPS {
         System.out.println(std1);
         System.out.println(std2);
 
+        //
+//        Encapsulation - wraping of data inside metods to access data we use getters and setters
 //        Abstraction
 //        Abstract class
 //        Can't be instantiated directly (No object)
@@ -73,6 +75,10 @@ public class OOPS {
 //        supports multiple-inheritance like behavior
         Rabbit rab = new Rabbit();
         Fish fish = new Fish();
+
+        //lambda expression works with functional interface
+        Prey obj=()-> System.out.println("lambda exp");
+        obj.flee();
 
 //        Polymorphism - an object can identify as other objects
 //        like a dog can be identified as an animal, organism , dog
@@ -101,7 +107,11 @@ public class OOPS {
         Book b1 = new Book("The Fellow of the Ring", 432);
         Book b2 = new Book("The two Tower", 352);
         Book b3 = new Book("The Return of the King", 416);
-        Book[] books = {b1, b2, b3};
+//        Book[] books = {b1, b2, b3};
+        Book[] books=new Book[3];
+        books[0]=b1;
+        books[1]=b2;
+        books[2]=b3;
         Library library = new Library("NYC Public Library", 1897, books);
         library.displayInfo();
         System.out.println(library.books[0].page);
@@ -149,11 +159,13 @@ public class OOPS {
             System.out.println("Enter a number :");
             int num = sc.nextInt();
             System.out.println(num);
+            if(num==0)
+                throw new InputMismatchException("Do not put 0");
             System.out.println(10 / 0);
         } catch (ArithmeticException e) {
             System.out.println(("You Can't divide by zero"));
         } catch (InputMismatchException e) {
-            System.out.println(("Please enter integer type"));
+            System.out.println(("Please enter integer type"+e));
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("index Out of bound");
         } catch (Exception e) {
@@ -161,6 +173,9 @@ public class OOPS {
         } finally { //always executed like normal  flow of code
             System.out.println("Final block");
         }
+
+        //Navin Exceptions- custom exceptions
+
         System.out.println("out of try catch finally");
 
         // write file
