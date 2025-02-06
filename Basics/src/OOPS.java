@@ -13,12 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Collections;
 
 public class OOPS {
@@ -148,7 +143,16 @@ public class OOPS {
         list.add(30);
         list.add(50);
         list.add(25);
-        Collections.sort(list);
+        //comparator - logic for sorting
+        Comparator<Integer>com=new Comparator<Integer>() {
+            @Override
+            public int compare(Integer i, Integer j) {
+                if(i%10>j%10)
+                    return 1;
+                else return -1;
+            }
+        };
+        Collections.sort(list,com);
         System.out.println(list);
 
         //Exception
