@@ -10,14 +10,9 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Page Title</h1>
+		<h1>Service Title</h1>
 		<h3>Enter your Title here</h3>
-		<%@ include file="menu.jsp"%>
+		<%@ include file="menu.jsp" %>
 	</div>
-	<form action="<%=application.getContextPath()%>/third" method="post">
-		<input name="message" type="text" placeholder="Enter your name here"/>
-		<button>Submit</button>
-	</form>
-	<script src="<%=application.getContextPath()%>/js/script.js"></script>
 </body>
 </html>
